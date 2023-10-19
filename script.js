@@ -41,6 +41,7 @@ document.querySelector('.check').addEventListener('click', function () {
       highscore = score;
     }
     highScore(highscore);
+
   } else if (guess > secretNumber) {
     if (score > 1) {
       displayMessage('📈 Too high!');
@@ -51,16 +52,19 @@ document.querySelector('.check').addEventListener('click', function () {
       scorePoints(0);
     }
   } else if (guess < secretNumber) {
-    displayMessage('📉 Too low!');
-    score--;
-    scorePoints(score);
-  } else {
-    displayMessage('💥 You lost the game');
-    scorePoints(0);
+    if (score > 1) {
+      displayMessage('📉 Too low!');
+      score--;
+      scorePoints(score);
+    } else {
+      displayMessage('💥 You lost the game');
+      scorePoints(0);
+    }
   }
 });
 
 document.querySelector('.again').addEventListener('click', function () {
+    
   secretNumber = Math.trunc(Math.random() * 20) + 1;
   document.querySelector('.guess').value = '';
   document.querySelector('.number').textContent = '?';
