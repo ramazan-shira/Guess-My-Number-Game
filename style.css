@@ -5,10 +5,8 @@
   padding: 0;
   box-sizing: inherit;
 }
-
 html {
   font-size: 62.5%;
-  box-sizing: border-box;
 }
 
 body {
@@ -49,7 +47,6 @@ h1 {
   position: absolute;
   font-size: 4rem;
   text-align: center;
-  width: 100%;
   top: 52%;
   left: 50%;
   transform: translate(-50%, -50%);
